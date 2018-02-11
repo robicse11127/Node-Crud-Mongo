@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="header-title">
+				<h1 class="display-4">{{ title }}</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="add-form">
+				{{# each user }}
+				<form action="/users/{{this._id}}/edit" method="post">
+					<div class="form-group">
+						<label for="Name">Name:</label>
+						<input type="text" value="{{ this.name }}" class="form-control" name="name" placeholder="Your Name*">
+					</div>
+					<div class="form-group">
+						<label for="Name">Username:</label>
+						<input type="text" value="{{ this.username }}" class="form-control" name="username" placeholder="Your Username*">
+					</div>
+					<div class="form-group">
+						<label for="Name">Bio:</label>
+						<textarea class="form-control" name="bio" rows="7" placeholder="Your Bio*">{{ this.bio }}</textarea>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" name="submit" value="Update">
+					</div>
+				</form>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</div>
